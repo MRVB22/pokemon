@@ -1,6 +1,13 @@
 from flask import Flask, render_template
-
+import requests 
 app = Flask(__name__)
+
+
+def get_pokemon_data(pokemon):
+
+    url = f'https://pokeapi.co/api/v2/pokemon/{pokemon}'
+    r = requests.get(url).json()
+    return r
 
 @app.route("/")
 def home():

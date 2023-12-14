@@ -41,7 +41,7 @@ def home():
         'weight':data.get('weight'),
         'order':data.get('order'), 
         'type':'Estudiante',
-        'photo':''
+        'photo':data.get('sprites').get('other').get('official-artwork').get('front_default')
             }
 
 

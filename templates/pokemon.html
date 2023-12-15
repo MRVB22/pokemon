@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="container text-center">
-        <img src="{{url_for('static', filename='logo.jpeg')}}" class="rounded mx-auto d-block" alt="...">
+        <img src="{{url_for('static', filename='logo2.jpg')}}" class="rounded mx-auto d-block" alt="...">
         <form method='post' action="{{ url_for('home') }}" id="search-form" class="mt-3">
             <div class="form-group">
                 <label for="search">Buscar Pokémon:</label>
@@ -67,7 +67,7 @@
                         <p class="card-text">Order:{{ pokemon.order }}</p>
                         <p class="card-text">Type:{{ pokemon.type }}</p>
                         <a href="#" class="btn btn-primary">Capturar</a>
-                        <a href="#" class="btn btn-primary">Detalle</a>
+                        <a href="{{ url_for('detalle') }}" class="btn btn-primary">Detalle</a>
                     </div>
                 </div>
             {% else %}

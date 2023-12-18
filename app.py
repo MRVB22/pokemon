@@ -53,13 +53,13 @@ def search_pokemon(name):
 def detalle():
     return render_template('detalle.html')
 
-@app.route("/insert")
-def insert():
-    new_pokemon= 'Ditto'
+@app.route("/insert_pokemon/<pokemon>")
+def insert(pokemon):
+    new_pokemon = pokemon
     if new_pokemon:
-            obj = Pokemon(name=new_pokemon,height=1.75, weight=100, order=100, type='Normal')
-            db.session.add(obj)
-            db.session.commit()
+         obj = Pokemon(pokemon)
+         db.session.add(obj)
+         db.session.commit()
     return 'Pokemon Agregado'
 
 @app.route("/select")

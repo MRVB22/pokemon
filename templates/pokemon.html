@@ -66,8 +66,9 @@
                         <p class="card-text">Weight:{{ pokemon.weight }}</p>
                         <p class="card-text">Order:{{ pokemon.order }}</p>
                         <p class="card-text">Type:{{ pokemon.type }}</p>
+                        <p class="card-text">Speed:{{ pokemon.speed }}</p>
                         <a href="#" class="btn btn-primary">Capturar</a>
-                        <a href="{{ url_for('detalle') }}" class="btn btn-primary">Detalle</a>
+                        <a href="{{ url_for('detalle',hp=pokemon.hp, attack=pokemon.attack, defence=pokemon.defence, speed=pokemon.speed) }}" class="btn btn-primary">Detalle</a>
                     </div>
                 </div>
             {% else %}

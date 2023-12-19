@@ -39,7 +39,6 @@ def search_pokemon(name):
     if 'sprites' not in data or 'official-artwork' not in data['sprites']['other']:
         return render_template('pokemon.html', pokemon=None)
     pokemon = {
-        'photo': data['sprites']['other']['official-artwork']['front_default'],
         'name': data['name'].upper(),
         'height': data['height'],
         'weight': data['weight'],
@@ -49,6 +48,8 @@ def search_pokemon(name):
         'attack': data.get('stats')[1].get('base_stat'),
         'defence': data.get('stats')[2].get('base_stat'),
         'speed': data.get('stats')[5].get('base_stat'),
+        'photo': data['sprites']['other']['official-artwork']['front_default'],
+        'photo1': data['sprites']['other']['dream-artwork']['front_default'],
     }
 
     return render_template('pokemon.html', pokemon=pokemon)
